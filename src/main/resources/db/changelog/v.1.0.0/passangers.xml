@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.27.xsd">
+
+    <changeSet id="create-table-passangers" author="samdim2011">
+        <createTable tableName="passangers">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(64)"/>
+            <column name="survived" type="boolean"/>
+            <column name="age" type="integer"/>
+            <column name="sex" type="varchar(32)"/>
+            <column name="pclass" type="integer"/>
+            <column name="siblings_aboard" type="integer"/>
+            <column name="children_aboard" type="integer"/>
+            <column name="fare" type="double"/>
+
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="pclass_chage_type" author="samdim2011">
+        <modifyDataType tableName="passangers" columnName="pclass" newDataType="varchar(64)"/>
+    </changeSet>
+
+</databaseChangeLog>
